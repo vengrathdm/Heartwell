@@ -1,0 +1,1008 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed&family=Roboto+Slab&family=Brygada+1918&family=Lora&family=Voltaire&family=Ballet:opsz@16..72&family=MedievalSharp&family=UnifrakturMaguntia&family=Pirata+One&display=swap');
+
+/* DEFINE CHAPTER COLORS */
+:root {
+--background							:	rgba(222, 213, 197,  1);
+--golden									: rgba(190, 180, 160,  1);
+--white 									: rgba(255, 255, 255,  1);
+--frame										: rgba(200, 185, 160, .4);
+--table										: rgba(180, 170, 140, .3);
+--table2									: rgba( 80,  180, 80, .1);
+--gradient								: linear-gradient(180deg, var(--dark) 0%, var(--empty) 150%);
+
+--bloodred                : #943A37;
+--darkblue                : #281E5D;
+--dossier-bg              : var(--monsterBackground);
+--arcane-accent           : var(--darkblue);
+--monsterBackground       : url(https://i.imgur.com/ZXCePkR.png);
+--pageBackground          : url(https://i.imgur.com/qHi4mcN.png);
+--pageBackground          : url(https://i.imgur.com/ZXCePkR.png);
+--wrapperBackground       : url(https://images.fallenlondon.com/static/bg-paper.png);
+
+--mainFont                : "Fira Sans Extra Condensed", sans-serif;
+--headerFont              : Voltaire, sans-serif;
+--standardSize            : 14px;
+}
+
+/* Page Size and Font */
+.page{
+  width                   : 839px;
+  height                  : 1081px;
+	padding-left            : 49px;
+  font-family             : var(--mainFont);
+  font-size               : var(--standardSize);
+  text-align              : justify;
+/* Page Background Image */
+	background-image	      : var(--pageBackground);
+  
+}
+
+/* First Letter of a Paragraph */
+.page h1+p:first-letter {
+    all                   : unset;
+}
+
+.page .Title {
+font-family: 'Ballet', cursive;
+font-size: 160px;
+    color:white;
+  -webkit-text-stroke: 1px darkred;
+}
+
+/* Lists */
+ul li {
+  font-family             : var(--mainFont);
+  font-size               : var(--standardSize);
+}
+
+/* Links */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: unset;            /* resets to inherited color */
+  text-decoration: unset;  /* removes the underline */
+}
+
+/* Column Wrapper */
+.columnWrapper {
+	background-image        : var(--wrapperBackground);
+	padding                 : 30px;
+	border                  : 2px solid var(--golden);
+	outline                 : 5px solid var(--background);
+  height                  : 950px;
+  width                   : 760px;
+  margin-left             : -10px;
+}
+.page#p1 .columnWrapper {
+all:unset;
+}
+
+/* HEADERS */
+.page h1,.page h2,.page h3,.page h4,.page h5,.page h6 {
+	font-family             :	var(--headerFont);
+  font-weight             : 400;
+  font-style              : normal;
+  color                   : var(--bloodred);
+  text-transform          : uppercase;
+  text-align              : left;
+  letter-spacing          : -1px;
+  margin-bottom           : 1%;
+}
+.page h1 {
+  text-align              : center;
+  font-size               : 70px;
+  letter-spacing          :-3px;
+  border-bottom           : 2px solid var(--bloodred);
+  margin-bottom           : 5%;
+}
+.page h2 {
+  font-size               : 36px;
+}
+.page h3 {
+  font-size               : 24px;
+  border-bottom           : unset;
+}
+.page h4,.page h5,.page h6 {
+  color                   : var(--darkblue);
+}
+
+/* FOOTER AND PAGE NUMBER */
+.page .pageNumber,
+.page .footnote {
+	font-family							:	var(--headerFont);
+	position								: absolute;
+	text-transform					: uppercase;
+	bottom									: 41px;
+	right										: 73px;
+	letter-spacing					: 1px;
+	font-size								: 1.2em;
+	color										: var(--white);
+	text-align							: right;
+	margin									: unset;
+	padding									: unset;
+	width										: 500px;
+	line-height							: 0px;
+	font-weight							: 400;
+}
+.page .pageNumber{
+	right 									: 30px;
+}
+.page:nth-child(even) .pageNumber,
+.page:nth-child(even) .footnote {
+	text-align							: left;
+}
+.page:nth-child(even) .footnote{
+	right										: unset;
+	left										: 73px;
+}
+.page:nth-child(even) .pageNumber{
+	right										: unset;
+	left 										: 30px;
+}
+
+/* FOOTER IMAGE */
+.page:after {
+	background-image	      : unset;
+}
+/* FRAMED TEXT, NOTES, DESCRIPTIONS */
+.page .note,
+.page .frame,
+.page .descriptive {
+  font-family             :	var(--mainFont);
+	filter              		: unset;
+	border-style						: unset;
+	width										: 330px;
+	padding									: 11px 13px 14px 13px;
+	margin-left							: -6px;
+	border-radius						: 20px;
+	outline									: 1px dashed var(--frame);
+ 	border									: 1px dashed var(--golden);
+	box-shadow							: unset;
+}
+.page .note {
+	background-color				: var(--frame);
+}
+.page .frame {
+	background-color				: var(--light);
+}
+.page .descriptive {
+	background-color				: var(--darkblue);
+  background-size:cover;
+}
+.page .descriptive table tbody tr:nth-child(odd) {
+}
+.page .descriptive p,
+.page .descriptive li,
+.page .descriptive h5,
+.page .descriptive table {
+	color										: white;
+}
+.page .note p,
+.page .frame p,
+.page .descriptive p {
+	line-height							: 1.5em;
+}
+.page .note + *,
+.page .frame + *,
+.page .descriptive+* {
+  margin-top							: 0.45cm;
+}
+.page .note.wide,
+.page .frame.wide,
+.page .descriptive.wide {
+	width										: 671px;
+}
+.page .note dl,ul,ol,
+.page .frame dl,ul,ol,
+.page .descriptive dl,ul,ol {
+	font-family							:	var(--mainFont);
+}
+.page .note p,
+.page .frame p,
+.page .descriptive p {
+  text-indent							: unset;
+}
+.page .note strong,
+.page .frame strong,
+.page .descriptive strong {
+  letter-spacing					: unset;
+}
+.page .note p+p,
+.page .frame p+p,
+.page .descriptive p+p {
+  padding-top							: 6px;
+}
+.page .note h5 + *,
+.page .frame h5 + *,
+.page .descriptive h5+* {
+  margin-top							: .2cm;
+}
+.page .note + .note,
+.page .note + .frame,
+.page .note + .descriptive,
+.page .frame + .note,
+.page .frame + .frame,
+.page .frame + .descriptive,
+.page .descriptive + .note,
+.page .descriptive + .frame,
+.page .descriptive + .descriptive {
+	margin-top							: 10px;
+}
+.page .note table + * {
+	margin-bottom						: unset;
+}
+.page .descriptive {
+  border: 2px dashed  white;
+}
+.page .wide::before {
+  width:200%
+}
+
+/* TABLES */
+.page table {
+	font-family							:	var(--headerFont);
+	font-size								: 12px;
+	letter-spacing					: 0.2px;
+	line-height							: 1.25em;
+}
+.page table td strong,
+.page table thead th {
+	vertical-align					: top;
+	font-family							:	var(--headerFont);
+	font-weight							: 600;
+}
+.page table tr {
+	height									: 17px;
+}
+.page table td {
+	vertical-align					: middle;
+	font-family							:	var(--headerFont);
+}
+.page table tbody tr:nth-child(odd) {
+	background-color				: var(--table);
+}
+.page table + * {
+	margin-bottom						: .35cm;
+}
+.page table + h3 {
+  margin-bottom						: unset;
+}
+.page table th .h3,
+.page table td .h3 {
+	font-size								: 16.8px;
+	margin-bottom						: .34cm;
+}
+.page table th .h4,
+.page table td .h4 {
+	font-size								: 16px;
+	margin-top							: .24cm;
+	margin-bottom						: .24cm;
+}
+.page table td .h3 {
+	font-family							:	var(--headerFont);
+	color										: var(--dark);
+	font-weight							: 700;
+	letter-spacing					: 0.2px;
+	margin-top						: .325cm;
+}
+
+/* TABLE OF CONTENTS */
+.page .toc h1 {
+	font-family							:	var(--headerFont);
+	text-transform					: uppercase;
+	padding-bottom					: .2em;
+	letter-spacing					: 2px;
+}
+.page .toc h3 {
+	font-size								: 1.5em;
+	letter-spacing					: 1px;
+	padding-bottom					: .4em;
+  margin-bottom           : 0px;
+  margin-top              : 0px;
+}
+.page .toc ul span:first-child::after {
+	border-bottom						: 0.05cm dotted var(--moss);
+	margin-bottom						: 4px;
+}
+.page .toc h4,
+.page .toc ul span:last-child {
+	font-family							:	var(--headerFont);
+	font-size								: 13px;
+	font-weight							: 100;
+	margin-top							: 2px;
+	margin-bottom						: 0px;
+	letter-spacing					: 0px;
+}
+.page .toc ul li + li h3 {
+	padding-top							: .1em;
+}
+.page .toc a {
+	font-weight							: inherit;
+}
+
+.page h3 {
+  --TOC                   : exclude;
+}
+
+.page .full {
+	background-image        : var(--wrapperBackground);
+	border                  : 2px solid var(--golden);
+	outline                 : 5px solid var(--background);
+	margin                  : 0px -20px -150px -20px;
+	padding                 : 0px;
+  position                : absolute;
+  overflow                : hidden;
+  height                  : 950px;
+  width                   : 760px;
+  margin-left             : -10px;
+}
+
+.page .full img {
+  position                : absolute;
+}
+.page:has(.full) .columnWrapper{
+  all                     : unset;
+}
+.page:has(.none) .columnWrapper{
+  all                     : unset;
+}
+/* IMAGE FRAME */
+.page .image {
+	float										:	right;
+	margin									: 0px 0px 0px 14px;
+}
+.page .image img {
+	object-fit							: cover;
+	padding									: 7px;
+	background-size					: cover;
+	background-color				: var(--light);
+	box-shadow							: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
+	width 									: 100%;
+	background-position			: center;
+}
+
+/* MONSTER FRAME */
+.page .monster {
+  color                   : white;
+  padding                 : 14px 16px 18px 16px;
+  margin                  : 0.35cm 0;
+  border                  : 2px dashed var(--white);
+}
+.page:has(.full) .monster {
+  width                   : 696px;
+  margin-left             : 22px;
+  margin-top              : 45px;
+}
+.page:has(.full) .descriptive {
+  width                   : 696px;
+  margin-left             : 22px;
+  margin-top              : 45px;
+}
+
+.page .monster,
+.page .monster ul,
+.page .monster table,
+.page .monster em,
+.page .monster strong,
+.page .monster tr,
+.page .monster td,
+.page .monster dl,
+.page .monster dd {
+  color                   : white;
+	font-family             :	var(--headerFont);
+  background-size         : cover;
+  font-size               : 13px;
+  font-family             : "MedievalSharp", cursive;
+
+}
+.page .monster {
+  background-image        : var(--monsterBackground);
+}
+
+.page .monster h2,
+.page .monster h3 {
+  color                   : white;
+	font-family             :	var(--headerFont);
+  border-bottom           : unset;
+  text-align              : center;
+  font-size               : 30px;
+  padding-bottom          : 0%;
+}
+
+.page .monster h3 {
+  font-size               : 24px;
+  padding-bottom          : 0.5%;
+  border-bottom           : 2px dotted var(--bloodred);
+}
+
+.page .monster h2 {
+  padding-top             : 1%;
+}
+
+.page .monster hr {
+  background              : none;
+  height                  : 0px;
+  border-top              : 2px dotted var(--bloodred);
+  margin-bottom           : 13px;
+  }
+
+.page .monster.bottom {
+  border                  : unset;
+  border-left             : 2px dashed var(--white);
+  border-right            : 2px dashed var(--white);
+  border-bottom           : 2px dashed var(--white);
+}
+
+.page .monster.top {
+  border                  : unset;
+  border-left             : 2px dashed var(--white);
+  border-right            : 2px dashed var(--white);
+  border-top              : 2px dashed var(--white);
+}
+.monster table,
+.monster thead,
+.monster tbody,
+.monster tr,
+.monster th,
+.monster td {
+  background-color        : transparent !important;
+}
+
+.page .sidenote {
+	font-family	            :	var(--mainFont);
+  background-color        : #e8dfd4;
+  border-left             : 6px solid #9a5b3d;
+}
+
+.page .enemy  {
+  background-image	      : url(https://i.imgur.com/kYp9fY9.png);
+}
+
+.page .clue   {
+  background-image	      : url(https://i.imgur.com/Rpbx6DR.png);
+}
+
+.page .occult {
+  background-image	      : url(https://i.imgur.com/HdMzT1b.png);
+}
+
+.page .dm     {
+  background-image	      : url(https://i.imgur.com/Bg0T0R8.png);
+}
+
+.page .lore   {
+  background-image	      : url(https://i.imgur.com/BChi6l4.png);
+}
+
+.page .enemy::first-line,
+.page .clue::first-line,
+.page .occult::first-line,
+.page .lore::first-line,
+.page .dm::first-line {
+  width                  : 100%;
+  font-size              : 20px;
+  font-weight            : bold;
+  text-transform         : uppercase;
+  color                  : white;
+  display                : block;
+  text-align             : center;
+  padding-bottom         : 6px;
+}
+
+:root {
+  --dossier-bg          : var(--monsterBackground);
+  --arcane-accent       : var(--darkblue);
+}
+
+/* ============================================================
+   A) NPC DOSSIER  —  .dossier
+   ============================================================ */
+
+.page .dossier {
+  position               : relative;
+  color                  : white;
+  background-image       : var(--dossier-bg);
+  background-size        : cover;
+  border                 : 2px dashed var(--white);
+  border-radius          : 2px;
+  padding                : 16px 18px 18px 18px;
+  margin                 : 0.35cm 0;
+  width                  : 330px;
+}
+
+.page .dossier.wide {
+  width                  : 671px;
+}
+
+.page:has(.full) .dossier {
+  width                  : 696px;
+  margin-left            : 22px;
+  margin-top             : 45px;
+}
+
+.page .dossier h2 {
+  font-family            : var(--headerFont);
+  color                  : white;
+  text-align             : center;
+  font-size              : 28px;
+  letter-spacing         : -1px;
+  border-bottom          : unset;
+  margin-bottom          : 1px;
+  padding-top            : 1%;
+}
+
+.page .dossier .archetype {
+  display                : block;
+  text-align             : center;
+  font-family             : var(--mainFont);
+  font-style             : italic;
+  font-size              : 12.5px;
+  color                  : #c9bfa8; /* warm parchment-white tint,
+                             legible on the dark texture without
+                             competing with the bloodred rules */
+  letter-spacing         : 0.5px;
+  margin-bottom          : 8px;
+  text-transform          : none;
+}
+
+.page .dossier hr {
+  background             : none;
+  height                 : 0px;
+  border-top             : 2px dotted var(--bloodred);
+  margin-bottom           : 10px;
+  margin-top              : 0px;
+  clear                  : both;
+}
+
+.page .dossier .identity-row {
+  display                : block;
+  justify-content        : space-between;
+  gap                    : 8px;
+  font-family            : var(--headerFont);
+  text-align             : center;
+  margin-bottom          : 10px;
+}
+
+.page .dossier .identity-row .stat {
+  flex                   : 1;
+}
+
+.page .dossier .identity-row .label {
+  display                : block;
+  font-size              : 10px;
+  text-transform         : uppercase;
+  letter-spacing          : 0.5px;
+  color                  : #c9bfa8;
+}
+
+.page .dossier .identity-row .value {
+  display                : block;
+  font-size              : 13px;
+  font-family            : "MedievalSharp", cursive;
+}
+.page .dossier h3 {
+  font-family            : var(--headerFont);
+  color                  : white;
+  text-align             : left;
+  font-size              : 15px;
+  letter-spacing         : 0.5px;
+  border-bottom          : 1px dotted var(--bloodred);
+  padding-bottom         : 2px;
+  margin-top             : 9px;
+  margin-bottom          : 4px;
+}
+
+.page .dossier p,
+.page .dossier li {
+  font-family            : "MedievalSharp", cursive;
+  font-size              : 13px;
+  line-height            : 1.4em;
+  text-align             : left;
+  color                  : white;
+}
+.page .dossier .secret {
+  background-color        : rgba(148, 58, 55, .28);
+  border-left             : 3px solid var(--bloodred);
+  padding                 : 6px 8px;
+  margin-top              : 6px;
+  border-radius           : 0 4px 4px 0;
+}
+
+.page .dossier .secret .label {
+  display                : block;
+  font-size              : 10px;
+  text-transform         : uppercase;
+  letter-spacing          : 1px;
+  color                  : #f0d8d6;
+  margin-bottom           : 2px;
+}
+
+.page .dossier .voice-line {
+  font-family             : 'Ballet', cursive;
+  font-size               : 22px;
+  color                   : white;
+  text-align              : center;
+  margin                  : 8px 0 4px 0;
+  line-height              : 1.1em;
+}
+
+.page .dossier .portrait {
+  float                   : right;
+  margin                  : 0 0 8px 10px;
+  width                   : 128px;
+  height                  : 192px;
+  aspect-ratio            : 1 / 1;
+}
+
+.page .dossier .portrait img {
+  width                   : 100%;
+  height                  : 100%;
+  aspect-ratio            : 2 / 3;
+  object-fit              : cover;
+  padding                 : 4px;
+  box-sizing              : border-box;
+  background-color        : white;
+  box-shadow              : rgba(0,0,0,0.4) 0px 1px 3px 0px;
+}
+
+.page .dossier h2,
+.page .dossier .archetype {
+  max-width               : calc(100% - 100px);
+}
+
+.page .dossier table,
+.page .dossier tbody,
+.page .dossier tr,
+.page .dossier td {
+  background-color        : transparent !important;
+  color                   : white;
+}
+
+/* ============================================================
+   B) GRIMOIRE BLOCK  —  .magic
+   ============================================================ */
+
+.page .magic {
+  position                 : relative;
+  color                    : white;
+  background-image         : var(--dossier-bg);
+  background-size          : cover;
+  border                   : 2px dashed var(--white);
+  padding                  : 14px 16px 18px 16px;
+  margin                   : 0.35cm 0;
+  width                    : 330px;
+}
+
+.page .magic.wide {
+  width                    : 671px;
+}
+
+.page:has(.full) .magic {
+  width                    : 696px;
+  margin-left              : 22px;
+  margin-top               : 45px;
+}
+
+.page .magic h3 {
+  font-family               : var(--headerFont);
+  color                     : white;
+  text-align                : center;
+  font-size                 : 26px;
+  letter-spacing            : -1px;
+  border-bottom             : unset;
+  margin-bottom             : 1px;
+}
+
+.page .magic .rarity {
+  display                    : block;
+  text-align                 : center;
+  font-family                 : var(--headerFont);
+  font-size                   : 12px;
+  letter-spacing               : 2px;
+  text-transform               : uppercase;
+  color                        : #9ab0e8;
+  margin-bottom                 : 6px;
+}
+
+.page .magic hr {
+  background                   : none;
+  height                        : 0px;
+  border-top                    : 2px dotted var(--bloodred);
+  margin-bottom                  : 10px;
+  margin-top                     : 0px;
+}
+
+.page .magic .subline {
+  display                        : block;
+  text-align                     : center;
+  font-family                     : var(--mainFont);
+  font-style                      : italic;
+  font-size                       : 12.5px;
+  color                           : #c9bfa8;
+  margin-bottom                    : 8px;
+}
+
+.page .magic .spell-facts {
+  display                          : flex;
+  justify-content                  : space-between;
+  gap                               : 6px;
+  font-family                       : var(--headerFont);
+  text-align                        : center;
+  border-top                        : 1px dotted var(--bloodred);
+  border-bottom                     : 1px dotted var(--bloodred);
+  padding                           : 6px 2px;
+  margin-bottom                     : 8px;
+}
+
+.page .magic .spell-facts .stat {
+  flex                              : 1;
+}
+
+.page .magic .spell-facts .label {
+  display                          : block;
+  font-size                        : 9px;
+  text-transform                   : uppercase;
+  color                            : #c9bfa8;
+}
+
+.page .magic .spell-facts .value {
+  display                          : block;
+  font-size                        : 12.5px;
+  font-family                      : "MedievalSharp", cursive;
+}
+
+.page .magic p {
+  font-family                       : var(--mainFont);
+  font-size                         : 13px;
+  line-height                       : 1.5em;
+  text-align                        : left;
+  color                             : white;
+}
+
+.page .magic p + p {
+  padding-top                        : 5px;
+}
+
+.page .magic .description {
+  border-top                         : 1px dotted var(--bloodred);
+  margin-top                          : 8px;
+  padding-top                          : 6px;
+  font-size                           : 13px;
+}
+
+.page .magic .description strong {
+  font-style                          : normal;
+}
+
+.page .magic .flavor {
+  font-family                          : "Lora", serif;
+  font-style                           : italic;
+  font-size                            : 12px;
+  color                                 : #c9bfa8;
+  text-align                            : center;
+  margin-top                            : 9px;
+  padding-top                            : 7px;
+  border-top                             : 1px dotted var(--bloodred);
+}
+.page .magic.feat .prereq {
+  display                                 : block;
+  text-align                              : center;
+  font-family                              : var(--headerFont);
+  font-size                                : 11px;
+  text-transform                           : uppercase;
+  letter-spacing                            : 0.5px;
+  color                                     : #9ab0e8;
+  margin-bottom                              : 8px;
+}
+
+.page .magic table,
+.page .magic tbody,
+.page .magic tr,
+.page .magic td {
+  background-color                          : transparent !important;
+  color                                      : white;
+}
+.page .magic .brand {
+  display: block;
+  text-align: center;
+  font-family: var(--headerFont);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d7c27a;
+  margin-top: -2px;
+  margin-bottom: 4px;
+}
+
+
+
+.fullpage {
+    position: relative;
+}
+
+.fullpage img {
+    position: absolute;
+    top: -42px;
+    left: -31px;
+    z-index: 4;
+    max-width: 756px;
+    max-height: 948px;
+}
+
+
+/* ==========================
+   GOTHIC FRAME
+   ========================== */
+
+.page .gothic-frame {
+  position: relative;
+  width: 671px;
+  margin: .5cm 0;
+  padding: 34px 30px 26px;
+  box-sizing: border-box;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(148,58,55,.035) 0 2px,
+      transparent 2px 10px
+    ),
+    var(--wrapperBackground);
+  background-color: var(--background);
+  background-blend-mode: multiply, normal;
+}
+
+.page .gothic-frame.narrow {
+  width: 330px;
+}
+
+.page:has(.full) .gothic-frame {
+  width: 696px;
+  margin: 45px 0 0 22px;
+}
+
+/* Double border */
+.page .gothic-frame::before,
+.page .gothic-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.page .gothic-frame::before {
+  inset: 8px;
+  border: 1px solid var(--bloodred);
+}
+
+.page .gothic-frame::after {
+  inset: 14px;
+  border: 1px dashed rgba(148,58,55,.55);
+}
+
+/* Corner ornaments */
+.gf-corner {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gf-corner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gf-corner.tl { top: -2px; left: -2px; }
+.gf-corner.tr { top: -2px; right: -2px; transform: scaleX(-1); }
+.gf-corner.bl { bottom: -2px; left: -2px; transform: scaleY(-1); }
+.gf-corner.br { bottom: -2px; right: -2px; transform: scale(-1); }
+
+/* Title */
+.gothic-frame .gf-title {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 2px 22px;
+  background: var(--background);
+
+  font: 400 15px var(--headerFont);
+  color: var(--bloodred);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.gothic-frame .gf-title::before,
+.gothic-frame .gf-title::after {
+  content: "❦";
+  margin: 0 10px;
+  color: var(--darkblue);
+  font-size: 12px;
+}
+
+/* Subtitle */
+.gothic-frame .gf-subtitle {
+  display: block;
+  margin: -6px 0 14px;
+  text-align: center;
+
+  font: italic 12px var(--mainFont);
+  color: #6d5f4d;
+}
+
+/* Divider */
+.gothic-frame hr {
+  margin: 0 0 14px;
+  border: 0;
+  border-top: 2px dotted var(--bloodred);
+}
+
+/* Table */
+.gothic-frame table {
+  width: 100%;
+  border-collapse: collapse;
+  font: 12.5px var(--headerFont);
+}
+
+.gothic-frame table caption {
+  margin-bottom: 6px;
+  text-align: left;
+
+  font: italic 11.5px var(--mainFont);
+  color: #6d5f4d;
+}
+
+.gothic-frame thead th {
+  padding: 7px 10px;
+  text-align: left;
+
+  background: var(--darkblue);
+  color: var(--white);
+  border-bottom: 2px solid var(--bloodred);
+
+  font: 600 12px var(--headerFont);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.gothic-frame tbody tr:nth-child(odd) {
+  background: var(--table);
+}
+
+.gothic-frame tbody td {
+  padding: 6px 10px;
+  vertical-align: top;
+  color: #2a2018;
+  border-bottom: 1px dotted rgba(148,58,55,.35);
+}
+
+.gothic-frame tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.gothic-frame tbody strong {
+  color: var(--bloodred);
+}
+
+/* Footer flourish */
+.gothic-frame .gf-footer {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--darkblue);
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+
